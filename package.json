@@ -1,0 +1,33 @@
+{
+  "name": "@missing-comma/akherom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo build",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missing-comma/stream-cli.git"
+  },
+  "author": "Alexandre Dias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missing-comma/stream-cli/issues"
+  },
+  "homepage": "https://github.com/missing-comma/stream-cli#readme",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "module-alias": "2.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.29",
+    "eslint-config-prettier": "^8.3.0",
+    "@types/module-alias": "2.0.1",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
