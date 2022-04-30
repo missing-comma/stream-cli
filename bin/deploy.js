@@ -35,4 +35,5 @@ updateJSON((json) => {
 });
 
 process.chdir('./deploy');
+run('npm install');
 run('npm publish --access public');
