@@ -6,19 +6,19 @@ type TestScope = 'unit' | 'integration' | 'staged' | 'ci';
 const testScope: TestScope = (process.env.TEST_SCOPE as any) || '';
 
 const scopeSpecificConfigurations: Record<TestScope, (conf: JestConfig) => JestConfig> = {
-	unit: conf => ({
+	unit: (conf) => ({
 		...conf,
 		testMatch: ['**/*.spec.ts'],
 	}),
-	integration: conf => ({
+	integration: (conf) => ({
 		...conf,
 		testMatch: ['**/*.test.ts'],
 	}),
-	staged: conf => {
+	staged: (conf) => {
 		conf.findRelatedTests = true;
 		return conf;
 	},
-	ci: conf => {
+	ci: (conf) => {
 		return conf;
 	},
 };
@@ -44,7 +44,7 @@ const config: JestConfig = {
 	moduleNameMapper: {
 		'~/(.*)': '<rootDir>/src/$1',
 	},
-	setupFilesAfterEnv: ['./src/tests/setup/index.ts'],
+	clearMocks: true,
 };
 
 if (testScope) {
