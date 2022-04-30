@@ -1,12 +1,11 @@
-import { AkheromRow } from '~/data/entities';
-import { IParseOneAkheromMessage, ISpreadMessagesInRows, IGetWritableWidth } from '~/data/protocols';
+import { ISpreadMessagesInRows, IGetWritableWidth } from '~/data/protocols';
 import { AkheromMessageLike } from '~/domain';
 import { ISpreadMessagesInRowsSpreadSingleRow } from '~/data/use-cases/spread-messages-in-row/protocols';
 
 export class SpreadMessagesInRows implements ISpreadMessagesInRows {
 	constructor(
 		private readonly width: IGetWritableWidth,
-		private readonly parse: IParseOneAkheromMessage,
+		// private readonly parse: IParseOneAkheromMessage,
 		private readonly spreadSingle: ISpreadMessagesInRowsSpreadSingleRow,
 	) {}
 
@@ -22,14 +21,14 @@ export class SpreadMessagesInRows implements ISpreadMessagesInRows {
 		return rows;
 	};
 
-	private parseRow = (message: string): AkheromRow => {
-		const metadata = this.parse.parse(message);
-		return {
-			metadata,
-			length: metadata.length,
-			content: message,
-		};
-	};
+	// private parseRow = (message: string): AkheromRow => {
+	// 	const metadata = this.parse.parse(message);
+	// 	return {
+	// 		metadata,
+	// 		length: metadata.length,
+	// 		content: message,
+	// 	};
+	// };
 
 	private joined = (messages: AkheromMessageLike[]): string => {
 		return messages.join('\n');

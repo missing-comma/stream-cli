@@ -15,7 +15,7 @@
 		"preserveWatchOutput": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"outDir": "./dist",
+		"outDir": "./deploy",
 		"baseUrl": "./src",
 		"paths": {
 			"~/*": ["*"]
@@ -23,8 +23,6 @@
 	},
 	"exclude": [
 		"dist",
-		"deploy",
-		"use-case-test",
 		"node_modules",
 		"**/test/**/*",
 		"**/tests/**/*",
